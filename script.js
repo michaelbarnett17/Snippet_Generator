@@ -8,7 +8,6 @@ input.addEventListener('keyup', function () {
     createOutput();
 });
 
-
 snippetName.addEventListener('keyup', function () {
     createOutput();
 });
@@ -21,7 +20,6 @@ const createOutput = () => {
     
     let inputLines = input.value.split('\n');
     
-
     output.value =
 `"${snippetName.value}": {
 "scope": "javascript,typescript",
@@ -31,7 +29,6 @@ const createOutput = () => {
     for (let i = 0; i < inputLines.length; i++) {
         output.value += `    "${inputLines[i]}",\n`;
     }
-
   
     output.value +=
 `],
