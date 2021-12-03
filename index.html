@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js" async></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>VS Code Snipper Generator</title>
+</head>
+
+<body>
+  <h1>Visual Studio Code Snippet Generator</h1>
+  <div id="container-1">
+    <div id="container-2">
+      <div id="boxes">
+        <label for="snippetName">Name</label>
+        <input type="text" id="snippetName" />
+        <label for="snippetShortcut">Shortcut</label>
+        <input type="text" id=snippetShortcut />
+        <label for="placeHolder">Copy For Placeholders:</label>
+        <input type="text" id=placeHolder class="shadow-none" value="${1:DEFAULT_TEXT}" />
+      </div>
+    </div>
+    <div id="container-3">
+      <!--The following 2 lines prevent the tab from changing focus away from input box. Thanks to elgholm! https://stackoverflow.com/questions/37658524/copying-text-of-textarea-in-clipboard-when-button-is-clicked/37659356-->
+      <textarea id="input"
+        onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'    '+v.substring(e);this.selectionStart=this.selectionEnd=s+4;return false;}"></textarea>
+      <textarea id="output" readonly></textarea>
+    </div>
+    <div id="container-4">
+      <button id="copyButton" type="button" class="btn btn-info">Copy To Clipboard</button>
+    </div>
+  </div>
+  <footer> By Mike Barnett © 2022 </footer>
+</body>
+
+</html>
